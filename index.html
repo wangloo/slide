@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/soben.css">
+
+        <style>
+            .reveal .slide-number {
+              font-size: 26px;
+              border-radius: 5px;
+              background-color: rgba(0, 0, 0, .3);
+              margin-right:100px;
+            }
+
+            .reveal .slides {
+              border: 1.5px #ddd solid;
+              border-radius: 7px;
+              text-align: left;
+              font-weight: 300;
+            }
+
+
+            .reveal li + li {
+              margin-top: 10px;
+            }
+
+            .reveal ul {
+              display: block;
+              margin-right: 15px;
+            }
+
+            .reveal p, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+              padding:  0 25px 0 25px;
+            }
+
+            .reveal table {
+              font-size: 32px;
+              font-family: 'Lato', 'STHeiti', 'SimHei', 'Sans Serif';
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .reveal th {
+              background-color: #eee;
+            }
+
+            .reveal tr:nth-child(even) {
+              background-color: #efffff;
+            }
+
+            .reveal h1,
+            .reveal h2,
+            .reveal h3,
+            .reveal h4,
+            .reveal h5,
+            .reveal h6 {
+              text-align: left;
+              margin: 0 0 20px 0;
+              color: #222;
+              font-weight: 400;
+              line-height: 1.2;
+              letter-spacing: normal;
+            }
+
+            .reveal h1 {
+              margin: 0 10 0 10;
+              font-size: 60px;
+            }
+            .reveal .middle h1 {
+              text-align: center;
+            }
+
+            .reveal h2 {
+              font-size: 42px;
+              border-bottom: 2px solid rgb(106, 0, 95);
+              padding-bottom: 5px;
+            }
+            .reveal h3 { font-size: 1.15em; }
+            .reveal h4 { font-size: 1.05em; }
+
+            .reveal .center {
+              text-align: center;
+            }
+
+            .reveal .middle {
+              height: 728px;
+              display: flex;
+              align-items: center;
+              width: 100%;
+            }
+
+            .reveal pre {
+              font-size: 20px;
+              background-color: #eee;
+              border-radius: 3mm;
+              padding: 3px 3px 3px 3px;
+            }
+
+
+            section .center {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+            .reveal .author-block {
+              margin: 75px 0 35px 0;
+            }
+            .reveal .author-affiliation img {
+              margin: 15px 0 0 0;
+            }
+            .reveal .author-block p, .reveal .author-affiliation p  {
+              font-family: 'Kaiti', 'STKaiti', 'Serif', 'Times', 'Times New Roman';
+              margin-block-start: 0em;
+              margin-block-end: 0em;
+            }
+            .reveal .author-affiliation {
+              display: inline-block;
+              font-size: 90%;
+            }
+            .reveal hr {
+              border: 10px solid white;
+            }
+            .reveal li {
+              margin-top: 10px;
+            }
+        </style>
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/github.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-color="aquamarine">
+                    Slide 1
+                </section>
+                <section data-background-image="https://picsum.photos/seed/picsun/1000">
+                    hello image!
+                </section>
+                <section data-background-iframe="https://wangloo.github.io/blog/">
+                </section>
+                <section>
+                    <section>Vertical 1</section>
+                    <section>Vertical 2</section>
+                </section>
+				<section>Slide 2</section>
+                <section data-markdown
+                         data-separator-vertical="^\r?\naaa\r?\n$">
+                    <textarea data-template>
+                        ## Slide 1 Markdown
+                        A paragraph with some text and a [link](https://wangloo.github.io/blog/).
+                        ---
+                        ## 幻灯片1960: 支持中文吗?
+                        > 听课看书都不重要, 支不支持中文才重要
+
+                        应用的视角1999
+                        1. Application
+                        2. 怎么样才能达成目标..
+
+                        硬件的视角
+
+                        * Hardware
+                            * ARM
+                            * X86
+                        * Software
+                            * 系统软件
+                            * 应用软件
+
+                        ---
+                        <!-- .slide: style="text-align: center;" -->
+                        ## Slide 3
+                        ```c
+                        #include <stdio.h>
+                        int main(void) {
+                            return 0;
+                        }
+                        ```
+                        ---
+                        ## Slide 4
+                        * we need to do something.
+                        * never give up.
+                        * get rid of bad habbits.
+                        * eat breakfast every morning.
+
+                        aaa
+
+                        > hello, this is quote  
+                        > no one would reject
+
+                        > 你知道这是一个引用吗?
+
+                        $$
+                            \sum_{k=0}
+                        $$
+
+                    </textarea>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+                center: false,
+                embeded: false,
+
+                width: 1024,
+                height:768,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>

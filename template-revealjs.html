@@ -3,14 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<title>$title$</title>
-
+        <meta name="description" content="$title$">    
+        
+        $for(author)$
+            <meta name="author" content="$author$" />
+        $endfor$
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/soben.css">
-		<link rel="stylesheet" href="plugin/highlight/github.css">
 
+        <!-- For syntax highlighting -->
+        <!-- 可以在 markdown 中通过 header 来指定 highlight style, 默认是 github -->
+        $if(highlight-style)$
+          <link rel="stylesheet" href="plugin/highlight/$highlight-style$.css">
+        $else$
+          <link rel="stylesheet" href="plugin/highlight/github.css">
+        $endif$
         
         <link href="http://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet" type="text/css">
         <style>
@@ -41,40 +52,6 @@
                 font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
                 font-weight: 400;
             }
-            
-            .reveal p, .reveal li, .reveal center {
-                font-size: 32px;
-                font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
-            }
-
-            .reveal li + li {
-              margin-top: 10px;
-            }
-
-            .reveal ul {
-              display: block;
-              margin-right: 15px;
-            }
-
-            .reveal p, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
-              padding:  0 25px 0 25px;
-            }
-
-            .reveal table {
-              font-size: 32px;
-              font-family: 'Lato', 'STHeiti', 'SimHei', 'Sans Serif';
-              margin-top: 15px;
-              margin-bottom: 15px;
-            }
-
-            .reveal th {
-              background-color: #eee;
-            }
-
-            .reveal tr:nth-child(even) {
-              background-color: #efffff;
-            }
-
             .reveal h1,
             .reveal h2,
             .reveal h3,
@@ -90,46 +67,135 @@
             }
 
             .reveal h1 {
-              margin: 0 10 0 10;
-              font-size: 60px;
-            }
-            .reveal .middle h1 {
-              text-align: center;
+              font-size: 60px; /* font-size overwrite */
             }
 
             .reveal h2 {
               font-size: 42px;
-              border-bottom: 2px solid rgb(106, 0, 95);
+              border-bottom: 3px solid rgb(52, 116, 197);
               padding-bottom: 5px;
             }
             .reveal h3 { font-size: 1.15em; }
             .reveal h4 { font-size: 1.05em; }
 
-            .reveal .center {
-              text-align: center;
+            /* make all content have gaps on both sides */
+            .reveal p, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+              padding:  0 25px 0 25px;
             }
 
-            .reveal .middle {
-              height: 728px;
-              display: flex;
-              align-items: center;
-              width: 100%;
+            .reveal p {
+              margin-bottom: 10px; /* Decrease the margin-bottom  */
+              font-size: 32px;
+              font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
+            }
+           
+
+            /****************************************
+             *           TABLE 
+             ****************************************/
+             .reveal table {
+              font-size: 32px;
+              font-family: 'Lato', 'STHeiti', 'SimHei', 'Sans Serif';
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+            /* repleace by setting th element */
+            /* .reveal table thead {
+              background-color: #ddd;
+            } */
+            .reveal th {
+              background-color: #ddd;
+            }
+            .reveal tr:nth-child(even) {
+              /* background-color: #efffff; */ /* uncomment if needed */
+            }
+            .reveal table {
+              border: 1.5px black solid;
             }
 
+            /****************************************
+             *           LIST
+             ****************************************/
+            .reveal ul, .reveal ol {
+              margin-bottom: 5px;
+              margin-right: 15px;
+            }
+            .reveal li + li {
+              margin-top: 8px;
+            }
+            .reveal li {
+              font-size: 32px;
+              font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
+            }
+            /****************************************
+             *           CODE HIGHLIGHT
+             ****************************************/
             .reveal pre {
-              font-size: 20px;
+              font-size: 22px;
               background-color: #eee;
               border-radius: 3mm;
               padding: 3px 3px 3px 3px;
             }
 
-
-            section .center {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
+            /* inline code */
+            .reveal p > code {
+              font-size: 32px;
+              background-color: rgba(54, 105, 201, 0.5);
             }
 
+            /****************************************
+             *           IMAGES
+             ****************************************/
+            .reveal figure {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
+            .reveal img {
+              margin: 0px;
+            }
+            .reveal figcaption {
+              display: block;
+            }
+
+            /****************************************
+             *           MIDDLE h1
+             ****************************************/
+            .reveal .center {
+            }
+            .reveal .center h1 {
+              text-align: center;
+            }
+
+            /****************************************
+             *          INFORMATION 
+             ****************************************/
+            .reveal .information h1,
+            .reveal .information h3,
+            .reveal .information h4 {
+              text-transform: none;
+              /* background-color: darkcyan; */
+              text-align: center;
+            }
+            .reveal .info-title {
+              position:absolute;
+              padding: 0;
+              top: 25%;
+              width: 100%;
+            }
+            .reveal .content
+            {
+              position: absolute;
+              bottom: 10%;
+              width: 100%;
+              /* bottom: 20px; */
+            }
+            .information {
+              height: 100%;
+            }
+
+
+            /*             
             .reveal .author-block {
               margin: 75px 0 35px 0;
             }
@@ -145,17 +211,38 @@
               display: inline-block;
               font-size: 90%;
             }
-            .reveal hr {
-              border: 10px solid white;
+            
+            .reveal .float-right {
+             float: right;
+             clear: right;
             }
-            .reveal li {
-              margin-top: 10px;
-            }
+
+ */
+        
         </style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
+<section class="information">
+<h1 class="info-title">$title$</h1>
+<div class="content">
+<h3 class="info-inst" >$institution$</h3>
+$for(author)$<h3 class="info-author">$author$</h3>$endfor$
+<h3 class="info-date">$date$</h3>
+</div>
+</section>  
+
+
+$if(toc)$
+<section>
+  <h2>Outline</h2>
+  <nav id="$idprefix$TOC">
+    $toc$
+  </nav>
+</section>
+$endif$
 
 $body$
 

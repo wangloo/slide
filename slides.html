@@ -1,24 +1,22 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>如果正确处理人际关系</title>
+        <meta name="description" content="如果正确处理人际关系">    
+        
+                    <meta name="author" content="宋跃进" />
+        		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/soben.css">
 
-<title>Presentation</title>
-
-<meta name="description" content="Presentation">    
-
-  <meta name="author" content="soben" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-        <link rel="stylesheet" href="dist/reset.css">
-        <link rel="stylesheet" href="dist/reveal.css">
-
-  <link rel="stylesheet" href="css/theme/soben.css">
-
+        <!-- For syntax highlighting -->
+        <!-- 可以在 markdown 中通过 header 来指定 highlight style, 默认是 github -->
+                  <link rel="stylesheet" href="plugin/highlight/googlecode.css">
+                
         <link href="http://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet" type="text/css">
         <style>
             .font-sans {
@@ -48,39 +46,6 @@
                 font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
                 font-weight: 400;
             }
-
-            .reveal p, .reveal li, .reveal center {
-                font-size: 32px;
-                font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
-            }
-
-            .reveal li + li {
-              margin-top: 10px;
-            }
-            .reveal ul {
-              display: block;
-              margin-right: 15px;
-            }
-
-            .reveal p, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
-              padding:  0 25px 0 25px;
-            }
-
-            .reveal table {
-              font-size: 32px;
-              font-family: 'Lato', 'STHeiti', 'SimHei', 'Sans Serif';
-              margin-top: 15px;
-              margin-bottom: 15px;
-            }
-
-            .reveal th {
-              background-color: #eee;
-            }
-
-            .reveal tr:nth-child(even) {
-              background-color: #efffff;
-            }
-
             .reveal h1,
             .reveal h2,
             .reveal h3,
@@ -96,46 +61,135 @@
             }
 
             .reveal h1 {
-              margin: 0 10 0 10;
-              font-size: 60px;
-            }
-            .reveal .middle h1 {
-              text-align: center;
+              font-size: 60px; /* font-size overwrite */
             }
 
             .reveal h2 {
               font-size: 42px;
-              border-bottom: 2px solid rgb(106, 0, 95);
+              border-bottom: 3px solid rgb(52, 116, 197);
               padding-bottom: 5px;
             }
             .reveal h3 { font-size: 1.15em; }
             .reveal h4 { font-size: 1.05em; }
 
-            .reveal .center {
-              text-align: center;
+            /* make all content have gaps on both sides */
+            .reveal p, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+              padding:  0 25px 0 25px;
             }
 
-            .reveal .middle {
-              height: 728px;
-              display: flex;
-              align-items: center;
-              width: 100%;
+            .reveal p {
+              margin-bottom: 10px; /* Decrease the margin-bottom  */
+              font-size: 32px;
+              font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
+            }
+           
+
+            /****************************************
+             *           TABLE 
+             ****************************************/
+             .reveal table {
+              font-size: 32px;
+              font-family: 'Lato', 'STHeiti', 'SimHei', 'Sans Serif';
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+            /* repleace by setting th element */
+            /* .reveal table thead {
+              background-color: #ddd;
+            } */
+            .reveal th {
+              background-color: #ddd;
+            }
+            .reveal tr:nth-child(even) {
+              /* background-color: #efffff; */ /* uncomment if needed */
+            }
+            .reveal table {
+              border: 1.5px black solid;
             }
 
+            /****************************************
+             *           LIST
+             ****************************************/
+            .reveal ul, .reveal ol {
+              margin-bottom: 5px;
+              margin-right: 15px;
+            }
+            .reveal li + li {
+              margin-top: 8px;
+            }
+            .reveal li {
+              font-size: 32px;
+              font-family: 'Lato', 'SimHei', 'STXihei', 'Sans Serif';
+            }
+            /****************************************
+             *           CODE HIGHLIGHT
+             ****************************************/
             .reveal pre {
-              font-size: 20px;
+              font-size: 22px;
               background-color: #eee;
               border-radius: 3mm;
               padding: 3px 3px 3px 3px;
             }
 
-
-            section .center {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
+            /* inline code */
+            .reveal p > code {
+              font-size: 32px;
+              background-color: rgba(54, 105, 201, 0.5);
             }
 
+            /****************************************
+             *           IMAGES
+             ****************************************/
+            .reveal figure {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
+            .reveal img {
+              margin: 0px;
+            }
+            .reveal figcaption {
+              display: block;
+            }
+
+            /****************************************
+             *           MIDDLE h1
+             ****************************************/
+            .reveal .center {
+            }
+            .reveal .center h1 {
+              text-align: center;
+            }
+
+            /****************************************
+             *          INFORMATION 
+             ****************************************/
+            .reveal .information h1,
+            .reveal .information h3,
+            .reveal .information h4 {
+              text-transform: none;
+              /* background-color: darkcyan; */
+              text-align: center;
+            }
+            .reveal .info-title {
+              position:absolute;
+              padding: 0;
+              top: 25%;
+              width: 100%;
+            }
+            .reveal .content
+            {
+              position: absolute;
+              bottom: 10%;
+              width: 100%;
+              /* bottom: 20px; */
+            }
+            .information {
+              height: 100%;
+            }
+
+
+            /*             
             .reveal .author-block {
               margin: 75px 0 35px 0;
             }
@@ -151,77 +205,180 @@
               display: inline-block;
               font-size: 90%;
             }
-            .reveal hr {
-              border: 10px solid white;
-            }
-            .reveal li {
-              margin-top: 10px;
-            }
-        </style>
             
+            .reveal .float-right {
+             float: right;
+             clear: right;
+            }
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="plugin/highlight/github.css">
+ */
+        
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
 
-
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
-
-<body>
-
-<div class="reveal">
-
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
-
-<section>
-<h1>Presentation</h1>
-<h3>soben</h3>
-<p>
-<h4></h4>
-</p>
+<section class="information">
+<h1 class="info-title">如果正确处理人际关系</h1>
+<div class="content">
+<h3 class="info-inst" >电子科技大学(深圳)高等研究院</h3>
+<h3 class="info-author">宋跃进</h3>
+<h3 class="info-date">2022-05-16</h3>
+</div>
 </section>  
 
 
-<section id="幻灯片1" class="level2">
-<h2>幻灯片1</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="dt">int</span> main(void）{</a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb1-4" title="4">}</a></code></pre></div>
+<section>
+  <h2>Outline</h2>
+  <nav id="TOC">
+    <ul>
+    <li><a href="#/h1标题如果很长很长很长的情况下会不会超出边界呢">H1标题如果很长很长很长的情况下会不会超出边界呢</a><ul>
+    <li><a href="#/code">Code</a></li>
+    <li><a href="#/table">Table</a></li>
+    <li><a href="#/list">List</a></li>
+    <li><a href="#/quote-link">Quote &amp; Link</a></li>
+    <li><a href="#/emoji-image">Emoji &amp; Image</a></li>
+    <li><a href="#/underline-text-color">Underline &amp; Text Color</a></li>
+    </ul></li>
+    <li><a href="#/vertical-slides">Vertical Slides</a><ul>
+    <li><a href="#/vertical-1">vertical 1</a></li>
+    <li><a href="#/vertical-2">vertical 2</a></li>
+    </ul></li>
+    </ul>
+  </nav>
+</section>
+
+<section><section id="h1标题如果很长很长很长的情况下会不会超出边界呢" class="title-slide slide level1 center"><h1>H1标题如果很长很长很长的情况下会不会超出边界呢</h1></section><section id="code" class="slide level2">
+<h2>Code</h2>
+<p><strong>Block Code</strong></p>
+<pre class="c"><code>#include &lt;stdio.h&gt;
+int main(void) {
+    return 0;
+}</code></pre>
+<p><strong>Inline code</strong></p>
+<p>This is an inline code: <code>printf("Hello, world!\n");</code></p>
+<pre id="linenum" class="number-lines" data-startFrom="100"><code>#include &lt;stdio.h&gt;
+int main(void) {
+    return 0;
+}
+</code></pre>
+</section><section id="table" class="slide level2">
+<h2>Table</h2>
 <table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Price</th>
+<th>In stock</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>## slide 2</td>
+<td>Juicy Apples</td>
+<td>1.99</td>
+<td><em>7</em></td>
 </tr>
 <tr class="even">
-<td>* Monday</td>
+<td>Bananas</td>
+<td><strong>1.89</strong></td>
+<td>5234</td>
 </tr>
 <tr class="odd">
-<td>* Tuesday</td>
+<td>Watermallon</td>
+<td>2.50</td>
+<td>20000</td>
 </tr>
 <tr class="even">
-<td>* …</td>
+<td>Bluebarry</td>
+<td>5.02</td>
+<td>100</td>
 </tr>
 </tbody>
 </table>
-</section>
+</section><section id="list" class="slide level2">
+<h2>List</h2>
+<p>This is a test for <em>unordered list</em> and <em>ordered list</em>.</p>
+<p>First is unordered list</p>
+<ul>
+<li>Monday</li>
+<li>Tuesday</li>
+</ul>
+<p>Incremental</p>
+<div>
+<ul>
+<li class="fragment">First</li>
+<li class="fragment">Second</li>
+<li class="fragment">Third</li>
+</ul>
 </div>
+<ol type="1">
+<li>first ordered list.
+<ol type="1">
+<li>good</li>
+<li>excellent</li>
+</ol></li>
+<li>second ordered list.</li>
+</ol>
+</section><section id="quote-link" class="slide level2">
+<h2>Quote &amp; Link</h2>
+<blockquote>
+<p>这是一个引用格式.</p>
+</blockquote>
+<p>This is a <a href="http://wangloo.github.io/blog/" target="_blank">outside page link</a></p>
+<p>This is a <a href="http://wangloo.github.io/blog/">internal page link</a></p>
+</section><section id="emoji-image" class="slide level2">
+<h2>Emoji &amp; Image</h2>
+<p><span class="emoji" data-emoji="smile">😄</span></p>
+<p><br> </br></p>
+<p><img data-src="images/1.jpg" class="float-right" width="300" /></p>
+<!-- ![](images/1.jpg){.float-right width="300px" alt="scenery"} -->
+<figure>
+<img data-src="images/1.jpg" alt="scenery" class="center" width="300" /><figcaption>scenery</figcaption>
+</figure>
+</section><section id="underline-text-color" class="slide level2">
+<h2>Underline &amp; Text Color</h2>
+<p><span style="text-decoration:underline">Underline</span></p>
+<p><red> This text will be colored RED. </red></p>
+<p><green> This text will be colored GREEN. </green></p>
+<p>This will be colored cyan.{color=“#00ffff”}</p>
+</section><section class="slide level2">
 
-        <script src="dist/reveal.js"></script>
-        <script src="plugin/notes/notes.js"></script>
-        <script src="plugin/markdown/markdown.js"></script>
-        <script src="plugin/highlight/highlight.js"></script>
+</section></section>
+<section><section id="vertical-slides" class="title-slide slide level1 center"><h1>Vertical Slides</h1></section><section id="vertical-1" class="slide level2">
+<h2>vertical 1</h2>
+<footer>
+This is a footer.
+</footer>
+</section><section class="slide level2">
+
+<!-- .slide: style="text-align: right;" -->
+</section><section id="vertical-2" class="slide level2">
+<h2>vertical 2</h2>
+<section id="header-3" class="level3">
+<h3>Header 3</h3>
+<p>这是一些没用的文字ABC</p>
+<section id="header-4" class="level4">
+<h4>Header 4</h4>
+<p>这个大小怎么样?</p>
+</section>
+</section>
+</section></section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/math/math.js"></script>
-
-
-<script>
-  // Full list of configuration options available here:
-  // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                hash: true,
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
                 slideNumber: true,
                 center: false,
                 embeded: false,
@@ -229,12 +386,9 @@
                 width: 1024,
                 height:768,
 
-                // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-            });
-
-</script>
-
-</body>
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
 </html>
-

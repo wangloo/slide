@@ -1,0 +1,99 @@
+---
+title: Presentation
+author: soben
+date: 2022-05-16
+highlight-style: googlecode
+output: 
+  revealjs::revealjs_presentation: 
+    toc: true
+toc-title: outline
+---
+
+# H1标题如果很长很长很长的情况下会不会超出边界呢 {.center .middle}
+
+---
+
+## Code
+
+**Block Code** 
+``` c
+#include <stdio.h>
+int main(void) {
+    return 0;
+}
+```
+
+
+**Inline code**
+
+This is an `Inline code`.
+
+~~~{#linenum .number-lines startFrom="100"}
+#include <stdio.h>
+int main(void) {
+    return 0;
+}
+
+~~~
+---
+
+## List
+一年有365天, 一个星期有7天
+
+* Monday
+* Tuesday
+
+Incremental
+
+::: incremental
+
+* First 
+* Second
+* Third
+
+:::
+
+---
+
+## Quote & Link
+
+> 这是一个引用格式.
+
+This is a [link](http://wangloo.github.io/blog/)
+
+---
+
+## Emoji & Image
+
+:smile:
+
+<br> </br>
+
+![](images/1.jpg){.float-right width="300px"}
+
+![](images/1.jpg){.float-right width="300px"}
+
+![scenery](images/1.jpg){.center width="300px"}
+
+
+---
+
+## Underline & Text Color
+
+<span class="underline">Underline</span>
+
+<red> This text will be colored RED. </red>
+
+<green> This text will be colored GREEN. </green>
+
+---
+
+# Vertical Slides {.middle .center}
+
+---
+
+## vertical 1
+
+---
+
+## vertical 2
